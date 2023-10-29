@@ -60,6 +60,7 @@
             RoomCanvas = new PictureBox();
             descLabel = new Label();
             RoomNameLabel = new Label();
+            enterButton = new Button();
             PromptGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hexcompass1).BeginInit();
             StatGroup.SuspendLayout();
@@ -74,6 +75,7 @@
             // PromptGroup
             // 
             PromptGroup.BackColor = Color.Transparent;
+            PromptGroup.Controls.Add(enterButton);
             PromptGroup.Controls.Add(helpindicator);
             PromptGroup.Controls.Add(movelabel);
             PromptGroup.Controls.Add(wButton);
@@ -234,7 +236,7 @@
             inputBox.MaxLength = 34;
             inputBox.Name = "inputBox";
             inputBox.PlaceholderText = "Type a command...";
-            inputBox.Size = new Size(384, 26);
+            inputBox.Size = new Size(288, 26);
             inputBox.TabIndex = 2;
             // 
             // menulabel
@@ -421,6 +423,22 @@
             RoomNameLabel.TabIndex = 0;
             RoomNameLabel.Text = "Currentroom";
             // 
+            // enterButton
+            // 
+            enterButton.BackColor = Color.FromArgb(25, 25, 25);
+            enterButton.FlatAppearance.BorderColor = Color.FromArgb(25, 25, 25);
+            enterButton.FlatAppearance.BorderSize = 0;
+            enterButton.FlatStyle = FlatStyle.Flat;
+            enterButton.Font = new Font("Neue Haas Grotesk Text Pro", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            enterButton.ImageAlign = ContentAlignment.TopCenter;
+            enterButton.Location = new Point(605, 224);
+            enterButton.Name = "enterButton";
+            enterButton.Size = new Size(90, 28);
+            enterButton.TabIndex = 15;
+            enterButton.Text = "Enter";
+            enterButton.UseVisualStyleBackColor = false;
+            enterButton.Click += enterButton_Click;
+            // 
             // MainUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -485,5 +503,6 @@
         public Label playerinv;
         public Label playerdef;
         public Label playeratk;
+        private Button enterButton;
     }
 }

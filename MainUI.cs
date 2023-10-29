@@ -10,7 +10,6 @@ namespace AxonicaFalls
         public MainUI()
         {
             InitializeComponent();
-            KeyPreview = true;
         }
 
         public void UpdateUI()
@@ -64,15 +63,6 @@ namespace AxonicaFalls
             bool keepPlaying = true;
             UpdateUI();
         }
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-                engine.Lexer();
-            }
-
-        }
 
         public void clOut(string output)
         {
@@ -96,5 +86,10 @@ namespace AxonicaFalls
             }
         }
 
+        private void enterButton_Click(object sender, EventArgs e)
+        {
+            engine.Lexer(inputBox.Text);
+            UpdateUI();
+        }
     }
 }

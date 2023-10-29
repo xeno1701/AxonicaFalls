@@ -215,9 +215,9 @@ namespace AxonicaFalls
         }
 
 
-        public void Lexer()
+        public void Lexer(string inputstring)
         {
-            string[] splitter = mainUI.inputBox.Text.Split(' ');
+            string[] splitter = inputstring.Split(' ');
             List<Token> tokens = new List<Token>();
             for (int i = 0; i < tokens.Count; i++)
             {
@@ -263,7 +263,6 @@ namespace AxonicaFalls
 
         void LookAround()
         {
-            mainUI.clOut("Yess");
         }
     }
 }
