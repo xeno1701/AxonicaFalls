@@ -62,9 +62,10 @@
             ClientSize = new Size(300, 350);
             Controls.Add(label1);
             Controls.Add(loadscreenicon);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoadingScreen";
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Axonica Falls";
             Load += LoadingScreen_Load;

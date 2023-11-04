@@ -11,9 +11,7 @@ namespace AxonicaFalls
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            //Application.Run(new LoadingScreen());
-            //Thread.Sleep(1000);
-            Application.Run(new MainUI());
+            Application.Run(new AxonicaFallsTray());
         }
     }
 }

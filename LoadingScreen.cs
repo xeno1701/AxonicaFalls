@@ -12,6 +12,7 @@ namespace AxonicaFalls
 {
     public partial class LoadingScreen : Form
     {
+        MainUI MainUI = new MainUI();
         public LoadingScreen()
         {
             InitializeComponent();
@@ -19,7 +20,23 @@ namespace AxonicaFalls
 
         private void LoadingScreen_Load(object sender, EventArgs e)
         {
-            Thread.Sleep(3000);
+            System.Windows.Forms.Timer MyTimer = new System.Windows.Forms.Timer();
+            MyTimer.Interval = (3000);
+            MyTimer.Tick += new EventHandler(runMainUI);
+            MyTimer.Start();
+
+        }
+
+        void runMainUI(object sender, EventArgs eArgs)
+        {
+            try
+            {
+                MainUI.Show();
+            }
+            catch
+            {
+                Application.Exit();
+            }
             Close();
         }
     }

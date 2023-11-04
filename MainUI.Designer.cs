@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUI));
             PromptGroup = new GroupBox();
+            enterButton = new Button();
             helpindicator = new Label();
             movelabel = new Label();
             wButton = new Label();
@@ -60,7 +61,7 @@
             RoomCanvas = new PictureBox();
             descLabel = new Label();
             RoomNameLabel = new Label();
-            enterButton = new Button();
+            invMenuPopout = new Button();
             PromptGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)hexcompass1).BeginInit();
             StatGroup.SuspendLayout();
@@ -97,6 +98,22 @@
             PromptGroup.TabIndex = 0;
             PromptGroup.TabStop = false;
             // 
+            // enterButton
+            // 
+            enterButton.BackColor = Color.FromArgb(25, 25, 25);
+            enterButton.FlatAppearance.BorderColor = Color.FromArgb(25, 25, 25);
+            enterButton.FlatAppearance.BorderSize = 0;
+            enterButton.FlatStyle = FlatStyle.Flat;
+            enterButton.Font = new Font("Neue Haas Grotesk Text Pro", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            enterButton.ImageAlign = ContentAlignment.TopCenter;
+            enterButton.Location = new Point(605, 224);
+            enterButton.Name = "enterButton";
+            enterButton.Size = new Size(90, 28);
+            enterButton.TabIndex = 15;
+            enterButton.Text = "Enter";
+            enterButton.UseVisualStyleBackColor = false;
+            enterButton.Click += enterButton_Click;
+            // 
             // helpindicator
             // 
             helpindicator.AutoSize = true;
@@ -131,6 +148,7 @@
             wButton.TabIndex = 12;
             wButton.Text = "W";
             wButton.TextAlign = ContentAlignment.MiddleRight;
+            wButton.Click += wButton_Click;
             // 
             // sButton
             // 
@@ -141,6 +159,7 @@
             sButton.TabIndex = 11;
             sButton.Text = "S";
             sButton.TextAlign = ContentAlignment.BottomCenter;
+            sButton.Click += sButton_Click;
             // 
             // swButton
             // 
@@ -152,6 +171,7 @@
             swButton.TabIndex = 10;
             swButton.Text = "SW";
             swButton.TextAlign = ContentAlignment.BottomRight;
+            swButton.Click += swButton_Click;
             // 
             // seButton
             // 
@@ -162,6 +182,7 @@
             seButton.TabIndex = 9;
             seButton.Text = "SE";
             seButton.TextAlign = ContentAlignment.BottomLeft;
+            seButton.Click += seButton_Click;
             // 
             // eButton
             // 
@@ -173,6 +194,7 @@
             eButton.TabIndex = 8;
             eButton.Text = "E";
             eButton.TextAlign = ContentAlignment.MiddleLeft;
+            eButton.Click += eButton_Click;
             // 
             // nwButton
             // 
@@ -184,6 +206,7 @@
             nwButton.TabIndex = 7;
             nwButton.Text = "NW";
             nwButton.TextAlign = ContentAlignment.TopRight;
+            nwButton.Click += nwButton_Click;
             // 
             // neButton
             // 
@@ -194,6 +217,7 @@
             neButton.Size = new Size(88, 18);
             neButton.TabIndex = 6;
             neButton.Text = "NE";
+            neButton.Click += neButton_Click;
             // 
             // nButton
             // 
@@ -204,6 +228,7 @@
             nButton.TabIndex = 5;
             nButton.Text = "N";
             nButton.TextAlign = ContentAlignment.TopCenter;
+            nButton.Click += nButton_Click;
             // 
             // hexcompass1
             // 
@@ -251,6 +276,7 @@
             // StatGroup
             // 
             StatGroup.BackColor = Color.Transparent;
+            StatGroup.Controls.Add(invMenuPopout);
             StatGroup.Controls.Add(inventorylabel);
             StatGroup.Controls.Add(playerinv);
             StatGroup.Controls.Add(playerdef);
@@ -281,11 +307,12 @@
             // 
             // playerinv
             // 
-            playerinv.Font = new Font("Lucida Sans Unicode", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            playerinv.Font = new Font("Neue Haas Grotesk Text Pro Thin", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             playerinv.Location = new Point(7, 165);
             playerinv.Name = "playerinv";
             playerinv.Size = new Size(255, 378);
             playerinv.TabIndex = 15;
+            playerinv.Text = "null";
             // 
             // playerdef
             // 
@@ -405,7 +432,7 @@
             // 
             // descLabel
             // 
-            descLabel.Font = new Font("Neue Haas Grotesk Text Pro Thin", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            descLabel.Font = new Font("Neue Haas Grotesk Text Pro Thin", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             descLabel.ImageAlign = ContentAlignment.MiddleRight;
             descLabel.Location = new Point(356, 10);
             descLabel.Name = "descLabel";
@@ -423,21 +450,20 @@
             RoomNameLabel.TabIndex = 0;
             RoomNameLabel.Text = "Currentroom";
             // 
-            // enterButton
+            // invMenuPopout
             // 
-            enterButton.BackColor = Color.FromArgb(25, 25, 25);
-            enterButton.FlatAppearance.BorderColor = Color.FromArgb(25, 25, 25);
-            enterButton.FlatAppearance.BorderSize = 0;
-            enterButton.FlatStyle = FlatStyle.Flat;
-            enterButton.Font = new Font("Neue Haas Grotesk Text Pro", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            enterButton.ImageAlign = ContentAlignment.TopCenter;
-            enterButton.Location = new Point(605, 224);
-            enterButton.Name = "enterButton";
-            enterButton.Size = new Size(90, 28);
-            enterButton.TabIndex = 15;
-            enterButton.Text = "Enter";
-            enterButton.UseVisualStyleBackColor = false;
-            enterButton.Click += enterButton_Click;
+            invMenuPopout.BackColor = Color.FromArgb(25, 25, 25);
+            invMenuPopout.FlatAppearance.BorderColor = Color.FromArgb(25, 25, 25);
+            invMenuPopout.FlatAppearance.BorderSize = 0;
+            invMenuPopout.FlatStyle = FlatStyle.Flat;
+            invMenuPopout.Font = new Font("Neue Haas Grotesk Text Pro", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            invMenuPopout.ImageAlign = ContentAlignment.TopCenter;
+            invMenuPopout.Location = new Point(7, 521);
+            invMenuPopout.Name = "invMenuPopout";
+            invMenuPopout.Size = new Size(255, 28);
+            invMenuPopout.TabIndex = 16;
+            invMenuPopout.Text = "Inventory Menu";
+            invMenuPopout.UseVisualStyleBackColor = false;
             // 
             // MainUI
             // 
@@ -504,5 +530,6 @@
         public Label playerdef;
         public Label playeratk;
         private Button enterButton;
+        private Button invMenuPopout;
     }
 }
