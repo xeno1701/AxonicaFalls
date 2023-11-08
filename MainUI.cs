@@ -12,13 +12,13 @@ namespace AxonicaFalls
         public void UpdateUI()
         {
             //stats
-            playerhealth.Text = player.health.ToString();
-            playeratk.Text = player.atk.ToString();
-            playerdef.Text = player.def.ToString();
-            playermoney.Text = player.money.ToString();
+            Updatestats(playerhealth, player.health);
+            Updatestats(playeratk, player.atk);
+            Updatestats(playerdef, player.def);
+            Updatestats(playermoney, player.money);
 
             //room
-            RoomNameLabel.Text = player.currentroom.name;
+            RoomNameLabel.Text = player.currentroom.name.ToUpper();
             descLabel.Text = player.currentroom.desc;
             Canvaschanger();
 
@@ -36,7 +36,17 @@ namespace AxonicaFalls
 
 
         }
-
+        public void Updatestats(Label Toupdate, double value)
+        {
+            if (value == 0)
+            {
+                Toupdate.Text = "00";
+            }
+            else
+            {
+                Toupdate.Text = value.ToString();
+            }
+        }
         public void MinimapUpdater(Label toUpdate, int index)
         {
             if (index != -1)
@@ -48,74 +58,36 @@ namespace AxonicaFalls
                 toUpdate.Text = "";
             }
         }
-
         public void Canvaschanger()
         {
-            //RoomCanvas.Image = System.Drawing.Image.FromFile(@"C:\Users\dagan\source\repos\AxonicaFalls\" + player.currentroom.picname);
+            RoomCanvas.Image = System.Drawing.Image.FromFile(@"C:\Users\dagan\source\repos\AxonicaFalls\AXFL\" + "BW" + player.currentroom.picname);
         }
-
         public void Form1_Load(object sender, EventArgs e)
         {
             outputBox.Text = "";
             UpdateUI();
         }
-
-      
-
         void InventoryUpdater()
         {
             playerinv.Text = "";
 
             foreach (Item item in playersinv)
             {
-                playerinv.Text += " ⦿ " + item.name + ";\n";
+                playerinv.Text += " * " + item.name + ";\n";
             }
         }
-
         private void enterButton_Click(object sender, EventArgs e)
         {
             Lexer(inputBox.Text);
             UpdateUI();
         }
-
-        private void nButton_Click(object sender, EventArgs e)
-        {
-            Go(0);
-        }
-
-        private void neButton_Click(object sender, EventArgs e)
-        {
-            Go(1);
-        }
-
-        private void eButton_Click(object sender, EventArgs e)
-        {
-            Go(3);
-        }
-
-        private void seButton_Click(object sender, EventArgs e)
-        {
-            Go(6);
-        }
-
-        private void sButton_Click(object sender, EventArgs e)
-        {
-            Go(5);
-        }
-
-        private void swButton_Click(object sender, EventArgs e)
-        {
-            Go(7);
-        }
-
-        private void wButton_Click(object sender, EventArgs e)
-        {
-            Go(4);
-        }
-
-        private void nwButton_Click(object sender, EventArgs e)
-        {
-            Go(2);
-        }
+        private void nButton_Click(object sender, EventArgs e) { Go(0); }
+        private void neButton_Click(object sender, EventArgs e) { Go(1); }
+        private void eButton_Click(object sender, EventArgs e) { Go(3); }
+        private void seButton_Click(object sender, EventArgs e) { Go(6); }
+        private void sButton_Click(object sender, EventArgs e) { Go(5); }
+        private void swButton_Click(object sender, EventArgs e) { Go(7); }
+        private void wButton_Click(object sender, EventArgs e) { Go(4); }
+        private void nwButton_Click(object sender, EventArgs e) { Go(2); }
     }
 }

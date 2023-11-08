@@ -1,0 +1,1 @@
+[{"hex":"#ffffff"},{"hex":"#000000"},{"hex":"#555555"},{"hex":"#aaaaaa"},{"hex":"#0000aa"},{"hex":"#5555ff"},{"hex":"#00aa00"},{"hex":"#55ff55"},{"hex":"#00aaaa"},{"hex":"#55ffff"},{"hex":"#aa0000"},{"hex":"#ff5555"},{"hex":"#aa00aa"},{"hex":"#ff55ff"},{"hex":"#aa5500"},{"hex":"#ffff55"}]

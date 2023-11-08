@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AxonicaFalls
 {
-    public partial class MainUI : Form
+    public partial class MainUI
     {
         public MainUI()
         {
@@ -92,7 +92,7 @@ namespace AxonicaFalls
 
             temproom.provcode = Province.Judium;
             temproom.roomcode = 3;
-            temproom.name = "Restaurant";
+            temproom.name = "Diner";
             temproom.desc = "The best place for a proper cooked meal in Judium. You eat for less money as your aunt owns it.";
             temproom.picname = @"room3.png";
             temproom.radiolevel = 0;
@@ -216,8 +216,8 @@ namespace AxonicaFalls
         public List<Item> playersinv = new List<Item>();
 
         string[] PickPhrases = { "PICK", "GRAB", "GET", "HUNT", "SCAVENGE", "ADD" };
+        string[] SpeakPhrases = { "SPEAK", "TALK", "CHAT"};
         string[] ConnectPhrases = { "AND", "FOR", "TO", "BUT", "OR", "UP", "THE" };
-
 
 
         public enum ItemType
@@ -313,6 +313,15 @@ namespace AxonicaFalls
                 PickUp();
             }
 
+            if (LexerSearch(SpeakPhrases, tokens))
+            {
+                SpeakTo();
+            }
+
+        }
+        void SpeakTo()
+        {
+            
         }
 
         bool LexerSearch(string[] phrasebook, List<Token> tokens)
