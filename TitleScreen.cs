@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace AxonicaFalls
 {
-    public partial class AxonicaFallsTray : Form
+    public partial class TitleScreen : Form
     {
-        TitleScreen titleScreen = new TitleScreen();
         MainUI mainUI = new MainUI();
-
-        public AxonicaFallsTray()
+        public TitleScreen()
         {
             InitializeComponent();
         }
 
-        private void AxonicaFallsTray_Load(object sender, EventArgs e)
+        private void TitleScreen_Load(object sender, EventArgs e)
         {
-            //titleScreen.Show();
             mainUI.Show();
         }
     }

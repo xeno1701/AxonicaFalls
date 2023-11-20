@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using static AxonicaFalls.MainUI;
 
 namespace AxonicaFalls
 {
@@ -10,180 +12,30 @@ namespace AxonicaFalls
     {
         public MainUI()
         {
-
             InitializeComponent();
+
             Room temproom;
-            /*
-             Max chars for text 78
-            temproom.provcode = Province.Judium;
-            temproom.code = ;
-            temproom.name = "";
-            temproom.desc = ""; 
-            temproom.picname = "";
-            temproom.radiolevel = ;
-            temproom.pathN = ;
-            temproom.pathNE = ;
-            temproom.pathNW = ;
-            temproom.pathE = ;
-            temproom.pathW = ;
-            temproom.pathS = ;
-            temproom.pathSE = ;
-            temproom.pathSW = ;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 0, "Fountain", "The centre of town. All paths in your story lead from here.", 0, 1, 6, -1, 4, 2, 3, 5, -1);
             Rooms.Add(temproom);
-            */
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 0;
-            temproom.name = "Fountain";
-            temproom.desc = "The centre of town. All paths in your story lead from here.";
-            temproom.picname = @"room0.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = 1;
-            temproom.pathNE = 6;
-            temproom.pathNW = -1;
-            temproom.pathE = 4;
-            temproom.pathW = 2;
-            temproom.pathS = 3;
-            temproom.pathSE = 5;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 1, "Tavern", "The life and soul of social gatherings in Judium. The music is local, light, live and lovely.", 0, -1, -1, -1, -1, -1, 0, -1, -1);
             Rooms.Add(temproom);
-
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 1;
-            temproom.name = "Tavern";
-            temproom.desc = "The life and soul of social gatherings in Judium. The music is local, light, live and lovely.";
-            temproom.picname = @"room1.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = -1;
-            temproom.pathNE = -1;
-            temproom.pathNW = -1;
-            temproom.pathE = -1;
-            temproom.pathW = -1;
-            temproom.pathS = 0;
-            temproom.pathSE = -1;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 2, "Library", "The largest building in Judium, working as a Library and a Town Hall.", 0, -1, -1, -1, 0, -1, -1, -1, -1);
             Rooms.Add(temproom);
-
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 2;
-            temproom.name = "Library";
-            temproom.desc = "The largest building in Judium, working as a Library and a Town Hall.";
-            temproom.picname = @"room2.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = -1;
-            temproom.pathNE = -1;
-            temproom.pathNW = -1;
-            temproom.pathE = 0;
-            temproom.pathW = -1;
-            temproom.pathS = -1;
-            temproom.pathSE = -1;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 3, "Diner", "The best place for a proper cooked meal in Judium. You eat for less money as your aunt owns it.", 0, 0, -1, -1, -1, -1, -1, -1, -1);
             Rooms.Add(temproom);
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 3;
-            temproom.name = "Diner";
-            temproom.desc = "The best place for a proper cooked meal in Judium. You eat for less money as your aunt owns it.";
-            temproom.picname = @"room3.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = 0;
-            temproom.pathNE = -1;
-            temproom.pathNW = -1;
-            temproom.pathE = -1;
-            temproom.pathW = -1;
-            temproom.pathS = -1;
-            temproom.pathSE = -1;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 4, "Store", "Your parents' store. A sort of pawn shop various odds and ends.", 0, -1, -1, -1, -1, -1, -1, -1, 0);
             Rooms.Add(temproom);
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 4;
-            temproom.name = "Store";
-            temproom.desc = "Your parents' store. A sort of pawn shop various odds and ends.";
-            temproom.picname = @"room4.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = -1;
-            temproom.pathNE = -1;
-            temproom.pathNW = -1;
-            temproom.pathE = -1;
-            temproom.pathW = 0;
-            temproom.pathS = -1;
-            temproom.pathSE = -1;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 5, "Shelter", "\"A large metal hatch to the shelter. The war makes this place the scariest and the safest at the same time.", 0, -1, 0, -1, -1, -1, -1, -1, -1);
             Rooms.Add(temproom);
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 5;
-            temproom.name = "Shelter";
-            temproom.desc = "A large metal hatch to the shelter. The war makes this place the scariest and the safest at the same time.";
-            temproom.picname = @"room5.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = -1;
-            temproom.pathNE = 0;
-            temproom.pathNW = -1;
-            temproom.pathE = -1;
-            temproom.pathW = -1;
-            temproom.pathS = -1;
-            temproom.pathSE = -1;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
+            temproom = new Room(Province.Judium, 6, "Trail", "The path out of Judium, away to the city. Don't let the danger hold you back.", 0, -1, -1, -1, -1, 0, -1, -1, -1);
             Rooms.Add(temproom);
-
-            temproom.provcode = Province.Judium;
-            temproom.roomcode = 6;
-            temproom.name = "Trail";
-            temproom.desc = "The path out of Judium, away to the city. Don't let the danger hold you back.";
-            temproom.picname = @"room2.png";
-            temproom.radiolevel = 0;
-            temproom.pathN = -1;
-            temproom.pathNE = -1; //new path room
-            temproom.pathNW = -1;
-            temproom.pathE = -1;
-            temproom.pathW = -1;
-            temproom.pathS = -1;
-            temproom.pathSE = 0;
-            temproom.pathSW = -1;
-            temproom.items = new List<Item>();
-            temproom.roomevents = new List<Event>();
-            Rooms.Add(temproom);
-
-
-
 
             Item tempitem;
-
-            tempitem.code = 1;
-            tempitem.name = "Gold Coins";
-            tempitem.text = "The coins were legal tender, detailed with text and images of the kingdom.";
-            tempitem.type = ItemType.Generic;
-            tempitem.startroom = 1;
-            tempitem.itemradiolevel = 0.5;
-            tempitem.availability = false;
+            List<int> tempcomfinedfrom = new List<int>();
+            tempitem = new Item(1, "Gold Coins", "The coins were legal tender, detailed with text and images of the kingdom.", ItemType.Generic, 1, false, 0, tempcomfinedfrom);
             itemlist.Add(tempitem);
             avaliableitems.Add(tempitem);
-
-            tempitem.code = 2;
-            tempitem.name = "Small Coin Wallet";
-            tempitem.text = "The handcrafted leather coin wallet was mildly aged and was perfect for throwing thiefs off the tracks if they wanted to steal something...";
-            tempitem.type = ItemType.Generic;
-            tempitem.startroom = 1;
-            tempitem.itemradiolevel = 0.7;
-            tempitem.availability = false;
+            tempitem = new Item(1, "Small Coin Wallet", "The handcrafted leather coin wallet was mildly aged and was perfect for throwing thiefs off the tracks if they wanted to steal something...", ItemType.Generic, 1, false, 0, tempcomfinedfrom);
             itemlist.Add(tempitem);
             playersinv.Add(tempitem);
             avaliableitems.Add(tempitem);
@@ -237,6 +89,19 @@ namespace AxonicaFalls
             public int startroom;
             public bool availability;
             public double itemradiolevel;
+            public List<int> combinedfrom;
+
+            public Item(int code, string name, string text, ItemType type, int startroom, bool availability, double itemradiolevel, List<int> combinedfrom)
+            {
+                this.code = code;
+                this.name = name;
+                this.text = text;
+                this.type = type;
+                this.startroom = startroom;
+                this.availability = availability;
+                this.itemradiolevel = itemradiolevel;
+                this.combinedfrom = combinedfrom;
+            }
         }
         public struct Room
         {
@@ -244,7 +109,6 @@ namespace AxonicaFalls
             public int roomcode;
             public string name;
             public string desc;
-            public string picname;
             public double radiolevel;
             public int pathN;
             public int pathNE;
@@ -256,6 +120,25 @@ namespace AxonicaFalls
             public int pathE;
             public List<Item> items;
             public List<Event> roomevents;
+
+            public Room(Province provcode, int roomcode, string name, string desc, double radiolevel, int pathN, int pathNE, int pathNW, int pathS, int pathSE, int pathSW, int pathE, int pathW)
+            {
+                this.provcode = provcode;
+                this.roomcode = roomcode;
+                this.name = name;
+                this.desc = desc;
+                this.radiolevel = radiolevel;
+                this.pathN = pathN;
+                this.pathNE = pathNE;
+                this.pathNW = pathNW;
+                this.pathS = pathS;
+                this.pathSE = pathSE;
+                this.pathSW = pathSW;
+                this.pathE = pathE;
+                this.pathW = pathW;
+                this.items = new List<Item>();
+                this.roomevents = new List<Event>();
+            }
         }
         public struct Event
         {
@@ -297,20 +180,24 @@ namespace AxonicaFalls
                 temptoken.processed = splitter[i].ToUpper();
                 tokens.Add(temptoken);
             }
-            foreach (Token token in tokens)
+            for (int i = 0; i < tokens.Count; i++)
             {
                 foreach (string str in ConnectPhrases)
                 {
-                    if (token.processed == str)
+                    if (tokens[i].processed == str)
                     {
-                        tokens.Remove(token);
+                        tokens.RemoveAt(i);
                     }
                 }
 
             }
             if (LexerSearch(PickPhrases, tokens))
             {
-                PickUp();
+                tokens.RemoveAt(0);
+                inputBox.Clear();
+                PickUp(tokens);
+
+                
             }
 
             if (LexerSearch(SpeakPhrases, tokens))
@@ -333,15 +220,43 @@ namespace AxonicaFalls
                     if (token.processed == str)
                     {
                         return true;
+                        
                     }
                 }
             }
             return false;
         }
 
-        void PickUp()
+        void PickUp(List<Token> tokens)
         {
-            clOut("tesstinggg");
+            bool founditem = false;
+            string join = "";
+            foreach (Token token in tokens)
+            {
+                join += token.processed + " ";  
+            }
+            join = join.Trim();
+                foreach(Item item in player.currentroom.items)
+                {
+                    if(join == item.name.ToUpper())
+                    {
+                        playersinv.Add(item);
+                        player.currentroom.items.Remove(item);
+                        clOut(("You picked up "+ item.name + "."));
+                        founditem = true;
+                        break;
+                    }
+                }
+
+            if (!founditem)
+            {
+                string itemsearchedfor = "";
+                foreach (Token token in tokens)
+                {
+                    itemsearchedfor += token.original + " ";
+                }
+               clOut("You couldn't see " + itemsearchedfor + "nearby.");
+            }
         }
 
         public void clOut(string output)
@@ -419,5 +334,6 @@ namespace AxonicaFalls
             }
 
         }
+
     }
 }

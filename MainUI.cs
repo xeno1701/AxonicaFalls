@@ -9,6 +9,7 @@ namespace AxonicaFalls
 {
     public partial class MainUI : Form
     {
+        public bool isHidden = false;
         public void UpdateUI()
         {
             //stats
@@ -60,7 +61,8 @@ namespace AxonicaFalls
         }
         public void Canvaschanger()
         {
-            RoomCanvas.Image = System.Drawing.Image.FromFile(@"C:\Users\dagan\source\repos\AxonicaFalls\AXFL\" + "BW" + player.currentroom.picname);
+
+            // RoomCanvas.Image = System.Drawing.Image.FromFile(@"C:\Users\dagan\source\repos\AxonicaFalls\AXFL\" + "BWroom" + Convert.ToString(player.currentroom.roomcode) + ".png");
         }
         public void Form1_Load(object sender, EventArgs e)
         {
@@ -89,5 +91,18 @@ namespace AxonicaFalls
         private void swButton_Click(object sender, EventArgs e) { Go(7); }
         private void wButton_Click(object sender, EventArgs e) { Go(4); }
         private void nwButton_Click(object sender, EventArgs e) { Go(2); }
+
+        private void invMenuPopout_Click(object sender, EventArgs e)
+        {
+            BWItemlist itemlist = new BWItemlist(playersinv);
+
+            this.Hide();
+            itemlist.Show();
+        }
+
+        private void playeratk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
